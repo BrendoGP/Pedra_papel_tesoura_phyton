@@ -1,0 +1,43 @@
+'''
+Pedra, papel e tesoura game !!!
+Github: Brendo_GP
+'''
+from random import randint
+from time import sleep
+
+print('Olá eu sou Cloves, vamos jogar jokenpô !! \nFaça a sua escolha !!')
+jokenpo = int(input('Opções: \n[ 1 ] pedra \n[ 2 ] papel \n[ 3 ] tesoura \nQual a sua escolha: '))
+player_string = ('pedra', 'papel', 'tesoura')
+
+# 1 = pedra, 2 = papel, 3 = tesoura;
+pc_jokenpo = randint(1, 3)
+if pc_jokenpo == 1:
+    pc_string = 'pedra'
+elif pc_jokenpo == 2:
+    pc_string = 'papel'
+elif pc_jokenpo == 3:
+    pc_string = 'tesoura'
+if jokenpo != 1 and jokenpo != 2 and jokenpo != 3:
+    print('\033[31mValor informado invalido !!')
+else:
+ print('JOOO')
+ sleep(1)
+ print('KENNNNN')
+ sleep(1)
+ print('PÔ !!!')
+ print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
+ print('Você escolheu {} \nCloves escolheu {}'.format(player_string[(jokenpo - 1)], pc_string))
+ print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
+
+if jokenpo != 1 and jokenpo != 2 and jokenpo != 3:
+    print('\033[31mtente novamente e digite um numero entre 1 a 3')
+elif pc_jokenpo == 1 and jokenpo == 2: #papel ganha
+    print('\033[32mparabéns vc ganhou :) papel vence pedra')
+elif pc_jokenpo == 2 and jokenpo == 3: #tesoura ganha
+    print('\033[35mparabéns vc ganhou :) tesoura vence papel')
+elif pc_jokenpo == 3 and jokenpo == 1: #pedra ganha
+    print('\033[34mparabéns vc ganhou :) pedra vence tesoura')
+elif pc_jokenpo == jokenpo:
+    print('\033[33mNossa deu empate :S ambos escolhemos {}'.format(pc_string))
+else:
+    print('\033[31mHAHAHA ganhei :P \n{} vence {} mais sorte na proxima vez :)'.format(pc_string, player_string[(jokenpo- 1)]))
